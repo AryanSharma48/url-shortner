@@ -8,8 +8,10 @@ const urlDB: Record<string, string> = {};
 
 app.use(express.json());
 
-app.get('/', (req, res) => {
-    res.send("Hello from my server");
+app.get('/health', (req, res) => {
+    res.json({
+        "Status" : "OK"
+    })
 })
 
 app.post('/url', (req, res) => {
